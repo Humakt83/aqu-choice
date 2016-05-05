@@ -2,6 +2,6 @@ import { OptimalWater } from './optimal-water';
 
 export class Fish {
   
-    constructor(scientificName: string, name: string, optimalWater: OptimalWater) {}
+    constructor(public scientificName: string, public name: string, public optimalWater: OptimalWater) {}
   
 }

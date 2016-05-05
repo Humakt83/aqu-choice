@@ -1,3 +1,4 @@
 <div class="choose">
-    CHOOSE
+    <label>Hae<input type="text" placeholder="Kirjoita kalan tai kasvin nimi" [(ngModel)]="query"></label>
+    <choose-item *ngFor="let plant of plants | chooseFilter: query" [itemName]="plant.name"></choose-item>
 </div>
