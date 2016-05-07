@@ -24,3 +24,7 @@
     background-color: white;
     color: black;
 }
+
+.basket-item-incompatible {
+    background-color: rgb(140, 0, 0);
+}

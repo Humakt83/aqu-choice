@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { Plant } from '../index';
+import { Plant, ChoiceService } from '../index';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { BasketItem } from '../index';
@@ -8,6 +8,8 @@ import { BasketItem } from '../index';
 export class BasketService {
     
     basket: Observable<any[]> = new BehaviorSubject<any[]>();
+    
+    constructor(private choiceService: ChoiceService) {}
 	
     private basketItems: BasketItem[] = [];
     
@@ -19,5 +21,9 @@ export class BasketService {
     removeFromBasket(obj: any) {
         this.basketItems = this.basketItems.filter((item) => item !== obj);
         this.basket.next(this.basketItems);
+    }
+    
+    isIncompatibleWithBasket(obj: any) {
+        return this.choiceService.isWaterIncompatibleWithOthers(obj.optimalWater, this.basketItems.map(item => item.item.optimalWater));
     }
 }
