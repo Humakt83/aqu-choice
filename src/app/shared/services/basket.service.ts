@@ -1,8 +1,7 @@
 import { Injectable } from 'angular2/core';
-import { Plant, ChoiceService } from '../index';
+import { Plant, ChoiceService, BasketItem } from '../index';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { BasketItem } from '../index';
 
 @Injectable()
 export class BasketService {

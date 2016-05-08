@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { BasketService, Plant, OptimalWater } from '../index';
+import { Plant, OptimalWater } from '../index';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
@@ -8,12 +8,7 @@ export class PlantService {
     
     plants : Observable<Plant[]> = new BehaviorSubject<Plant[]>();
     
-    constructor(private basketService : BasketService) {
-        console.log(this.basketService);
-    }
-    
     getPlants() : Observable<Plant[]> {
-        this.basketService.basket.subscribe(result => this.plants.next(this.plantsArray));
         this.plants.next(this.plantsArray);
         return this.plants;
     }
