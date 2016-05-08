@@ -24,3 +24,7 @@
     background-color: rgb(0, 140, 0);
     color: white;
 }
+
+.choose-item-incompatible {
+    background-color: rgb(140, 0, 0);
+}

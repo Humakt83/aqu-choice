@@ -4,7 +4,7 @@ import { BasketService } from '../shared/index';
 
 @Component({
     selector: 'choose-item',
-    template: `<div class="choose-item">{{item.name}}<span class="addToBasket" (click)="addToBasket()">+</span></div>`,
+    template: `<div class="choose-item" [class.choose-item-incompatible]="isIncompatibleWithBasket()">{{item.name}}<span class="addToBasket" (click)="addToBasket()">+</span></div>`,
     styleUrls: ['app/choose/choose-item.css']
 })
 export class ChooseItemComponent {
@@ -15,5 +15,9 @@ export class ChooseItemComponent {
     
     addToBasket() {
         this.basketService.addToBasket(this.item);
+    }
+    
+    isIncompatibleWithBasket() {
+        this.basketService.isIncompatibleWithBasket(this.item);
     }
 }
