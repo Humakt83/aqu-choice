@@ -1,9 +1,11 @@
 import { Component, Input } from 'angular2/core';
-import { BasketService } from '../shared/index';
+import { BasketService, Fish } from '../shared/index';
 
 @Component({
     selector: 'choose-item',
-    template: `<div class="choose-item" [attr.data-tip]="item.toString()" [class.choose-item-incompatible]="isIncompatibleWithBasket()">{{item.name}}<span class="addToBasket" (click)="addToBasket()">+</span></div>`,
+    template:   `<div class="choose-item" [attr.data-tip]="item.toString()" [class.choose-item-incompatible]="isIncompatibleWithBasket()" [style.background-color]="styleColor()">
+                    {{item.name}}<span class="addToBasket" (click)="addToBasket()">+</span>
+                </div>`,
     styleUrls: ['app/choose/choose-item.css']
 })
 export class ChooseItemComponent {
@@ -18,5 +20,9 @@ export class ChooseItemComponent {
     
     isIncompatibleWithBasket() {
         return this.basketService.isIncompatibleWithBasket(this.item);
+    }
+    
+    styleColor() {
+        return this.item instanceof Fish ? 'rgb(140, 140, 140)' : 'rgb(0, 140, 0)';
     }
 }

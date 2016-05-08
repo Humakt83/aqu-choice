@@ -1,4 +1,4 @@
 <div class="choose">
     <label>Hae<input type="text" placeholder="Kirjoita kalan tai kasvin nimi" [(ngModel)]="query"></label>
-    <choose-item *ngFor="let plant of plants | chooseFilter: query" [item]="plant"></choose-item>
+    <choose-item *ngFor="let living of life | chooseFilter: query" [item]="living"></choose-item>
 </div>
