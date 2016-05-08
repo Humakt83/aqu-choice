@@ -1,5 +1,5 @@
 .basket {
-    width: 50%;
+    margin-left: 50%;
     border-left: 3px solid rgb(0, 0, 150);
-    display: inline-block;
+    min-height: 500px;
 }

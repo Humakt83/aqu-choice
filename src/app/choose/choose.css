@@ -1,4 +1,5 @@
 .choose {
-    width: 49%;
-    display: inline-block;
+    width: 48%;
+    float:  left;
+    min-height: 500px;
 }
