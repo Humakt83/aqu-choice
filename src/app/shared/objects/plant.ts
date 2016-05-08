@@ -4,4 +4,7 @@ export class Plant {
   
     constructor(public scientificName: string, public name: string, public optimalWater: OptimalWater) {}
   
+    toString() {
+        return `${this.scientificName}: (${this.optimalWater.toString()})`
+    }
 }
