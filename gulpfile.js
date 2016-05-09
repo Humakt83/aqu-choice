@@ -12,7 +12,7 @@ gulp.task('clean', function () {
 
 gulp.task('compile', ['clean'], function () {
     return gulp
-        .src('src/**/*.ts')
+        .src(['node_modules/angular2/typings/browser.d.ts', 'src/**/*.ts'])
         .pipe(typescript(tscConfig.compilerOptions))
         .pipe(gulp.dest('dist'));
 });

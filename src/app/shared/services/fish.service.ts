@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class FishService {
   
-    fish : Observable<Plant[]> = new BehaviorSubject<Plant[]>();
+    fish : Observable<Fish[]> = new BehaviorSubject<Fish[]>();
     
     getFish() : Observable<Fish[]> {
         this.fish.next(this.fishArray);
