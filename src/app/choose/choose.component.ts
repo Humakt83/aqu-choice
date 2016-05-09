@@ -14,7 +14,7 @@ import 'rxjs/add/operator/combineLatest';
 export class ChooseComponent implements OnInit {
     
     life : Living[] = [];
-    size: number = 40;
+    size: number = 200;
     
     constructor(private plantService: PlantService, private fishService: FishService, private basketService: BasketService) {}
     
