@@ -38,16 +38,15 @@
 .addToBasket {
     border-radius: 30px;
     padding: 2px;
-    background-color: white;
-    color: rgb(93, 102, 64);
+    color: white;
     font-weight: bold;
     margin-left: 4px;
     cursor: pointer;
 }
 
 .addToBasket:hover {
-    background-color: rgb(93, 102, 64);
-    color: white;
+    background-color: white;
+    color: rgb(93, 102, 64);
 }
 
 .choose-item-incompatible {
