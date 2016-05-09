@@ -14,9 +14,9 @@ export class FishService {
     }
     
     private fishArray : Fish[] = [
-        new Fish('Callus calamistratum', 'Piikkisilmä', new OptimalWater(5, 14, 5, 14, 5, 14)),
-        new Fish('Callus submersum', 'Tiikerinuoliainen', new OptimalWater(10, 20, 10, 20, 10, 20)),
-        new Fish('Testatums Callus', 'Lehtikala', new OptimalWater(15, 25, 15, 25, 15, 25)),
-        new Fish('Testatums Iaa', 'Neontetra', new OptimalWater(21, 30, 21, 30, 21, 30))
+        new Fish('Callus calamistratum', 'Piikkisilmä', new OptimalWater(5, 14, 5, 14, 5, 14), 120),
+        new Fish('Callus submersum', 'Tiikerinuoliainen', new OptimalWater(10, 20, 10, 20, 10, 20), 500),
+        new Fish('Testatums Callus', 'Lehtikala', new OptimalWater(15, 25, 15, 25, 15, 25), 450),
+        new Fish('Testatums Iaa', 'Neontetra', new OptimalWater(21, 30, 21, 30, 21, 30), 40)
     ];
 }

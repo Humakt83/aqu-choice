@@ -1,17 +1,26 @@
 import { Pipe } from 'angular2/core';
-import { Living } from '../shared/index';
+import { Living, Plant, Fish } from '../shared/index';
 
 @Pipe({ 
     name: 'chooseFilter'
 })
 export class ChooseFilterPipe {
     
-transform(living: Living[], query: string, scientific: boolean) {
-        if (!query) return living;
-        if (scientific) {
-            return living.filter(living => living.scientificName.toLowerCase().includes(query.toLowerCase()));
-        } else {
-            return living.filter(living => living.name.toLowerCase().includes(query.toLowerCase()));
+    transform(objects: Living[], query: string, scientific: boolean, size: number) {
+        let filtered : Living[] = this.filterByName(objects, query, scientific);
+        return this.filterByTankSize(filtered, size);
+    }
+    
+    private filterByName(objects: Living[], query: string, scientific: boolean) {
+        if(scientific && query) {
+            return objects.filter(living => living.scientificName.toLowerCase().includes(query.toLowerCase()));
+        } else if(query) {
+            return objects.filter(living => living.name.toLowerCase().includes(query.toLowerCase()));
         }
+        return objects;
+    }
+    
+    private filterByTankSize(objects: Living[], tankSize: number) {
+        return objects.filter(living => living instanceof Plant || (<Fish>living).minimumTankSize <= tankSize);
     }
 }

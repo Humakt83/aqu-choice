@@ -1,6 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
 import { ChooseItemComponent } from './choose-item.component';
-import { PlantService, FishService, Living } from '../shared/index';
+import { PlantService, FishService, BasketService, Living } from '../shared/index';
 import { ChooseFilterPipe } from './choose-filter.pipe';
 import 'rxjs/add/operator/combineLatest';
 
@@ -14,8 +14,9 @@ import 'rxjs/add/operator/combineLatest';
 export class ChooseComponent implements OnInit {
     
     life : Living[] = [];
+    size: number = 40;
     
-    constructor(private plantService: PlantService, private fishService: FishService) {}
+    constructor(private plantService: PlantService, private fishService: FishService, private basketService: BasketService) {}
     
     ngOnInit() {
         this.plantService.getPlants()
@@ -25,6 +26,11 @@ export class ChooseComponent implements OnInit {
                 error => console.error(error),
                 () => console.log('Fetched plants and fish'));
         
+    }
+    
+    changeTank(sizeNew : number) {
+        this.size = sizeNew;
+        this.basketService.tankSize = this.size;
     }
     
 }

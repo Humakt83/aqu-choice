@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { OptimalWater } from '../index';
+import { OptimalWater, Fish } from '../index';
 
 @Injectable()
 export class ChoiceService {
@@ -10,6 +10,10 @@ export class ChoiceService {
             incompatible = incompatible || (!this.pHMatch(water, other) && !this.dHMatch(water, other) && !this.tempMatch(water, other));
         });
         return incompatible;
+    }
+    
+    isTankLargeEnoughForFish(tankSize: number, fish: Fish) {
+        return fish.minimumTankSize <= tankSize;
     }
     
     private pHMatch(water: OptimalWater, other: OptimalWater) {

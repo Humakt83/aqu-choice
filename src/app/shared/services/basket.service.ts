@@ -1,5 +1,5 @@
 import { Injectable } from 'angular2/core';
-import { Living, ChoiceService, BasketItem } from '../index';
+import { Living, ChoiceService, BasketItem, Fish } from '../index';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class BasketService {
     
     basket: Observable<BasketItem[]> = new BehaviorSubject<BasketItem[]>();
+    
+    tankSize: number = 40;
     
     constructor(private choiceService: ChoiceService) {}
 	
@@ -23,6 +25,7 @@ export class BasketService {
     }
     
     isIncompatibleWithBasket(obj: Living) {
-        return this.choiceService.isWaterIncompatibleWithOthers(obj.optimalWater, this.basketItems.map(item => item.item.optimalWater));
+        let tankIsTooSmall : boolean = obj instanceof Fish ? !this.choiceService.isTankLargeEnoughForFish(this.tankSize, obj): false;
+        return tankIsTooSmall || this.choiceService.isWaterIncompatibleWithOthers(obj.optimalWater, this.basketItems.map(item => item.item.optimalWater));
     }
 }
