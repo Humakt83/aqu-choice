@@ -1,4 +1,5 @@
-<div class="choose">    
+<div class="choose">
+    <div class="title"><h2>Valitse</h2></div>
     <label>Hae&nbsp;<input type="text" placeholder="Kirjoita kalan tai kasvin nimi" [(ngModel)]="query"></label>
     <label><input type="checkbox" [(ngModel)]="scientific">Tieteellisistä nimistä</label>
     <choose-item *ngFor="let living of life | chooseFilter: query : scientific" [item]="living"></choose-item>

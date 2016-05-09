@@ -1,3 +1,12 @@
 body {
-    background: rgb(180, 180, 255);
+    background: rgb(143, 255, 237);
+    height: 100%;
+}
+
+.title {
+    width: 100%;
+    background: radial-gradient(rgb(60, 15, 232), rgb(90, 150, 234), rgb(143, 255, 237), rgb(143, 255, 237), rgb(143, 255, 237));
+    padding: 5px;
+    text-align: center;
+    color: rgb(255, 227, 194);
 }

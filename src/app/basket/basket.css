@@ -1,5 +1,8 @@
 .basket {
     margin-left: 50%;
-    border-left: 3px solid rgb(0, 0, 150);
-    min-height: 500px;
+    border-left: 3px solid rgb(60, 15, 232);
+    height: 1000px;
+    max-height: 100%;
+    padding-top: 1px;
+    padding-left: 15px;
 }

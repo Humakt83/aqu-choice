@@ -23,6 +23,6 @@ export class ChooseItemComponent {
     }
     
     styleColor() {
-        return this.item instanceof Fish ? 'rgb(140, 140, 140)' : 'rgb(0, 140, 0)';
+        return this.item instanceof Fish ? 'rgb(60, 15, 232)' : 'rgb(93, 102, 64)';
     }
 }

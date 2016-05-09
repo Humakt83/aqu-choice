@@ -1,6 +1,8 @@
 .choose {
     width: 48%;
     float:  left;
-    min-height: 500px;
-    padding-top: 10px;
+    min-height: 1000px;
+    padding-top: 5px;
+    padding-left: 15px;
+    height: 80%;
 }
