@@ -1,6 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
 import { ChooseItemComponent } from './choose-item.component';
-import { PlantService, FishService, Plant, Fish } from '../shared/index';
+import { PlantService, FishService, Living } from '../shared/index';
 import { ChooseFilterPipe } from './choose-filter.pipe';
 import 'rxjs/add/operator/combineLatest';
 
@@ -13,7 +13,7 @@ import 'rxjs/add/operator/combineLatest';
 })
 export class ChooseComponent implements OnInit {
     
-    life : any[] = [];
+    life : Living[] = [];
     
     constructor(private plantService: PlantService, private fishService: FishService) {}
     
@@ -21,7 +21,7 @@ export class ChooseComponent implements OnInit {
         this.plantService.getPlants()
             .combineLatest(this.fishService.getFish(), (x, y) => x.concat(y))
             .subscribe(
-                (result: any[]) => this.life = result,
+                (result: Living[]) => this.life = result,
                 error => console.error(error),
                 () => console.log('Fetched plants and fish'));
         

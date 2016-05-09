@@ -1,12 +1,12 @@
 import { Pipe } from 'angular2/core';
-import { Plant } from '../shared/index';
+import { Living } from '../shared/index';
 
 @Pipe({ 
     name: 'chooseFilter'
 })
 export class ChooseFilterPipe {
     
-transform(living: any[], query: string, scientific: boolean) {
+transform(living: Living[], query: string, scientific: boolean) {
         if (!query) return living;
         if (scientific) {
             return living.filter(living => living.scientificName.toLowerCase().includes(query.toLowerCase()));

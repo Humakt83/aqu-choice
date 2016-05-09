@@ -1,5 +1,5 @@
 import { Component, Input } from 'angular2/core';
-import { BasketService, Fish } from '../shared/index';
+import { BasketService, Fish, Living } from '../shared/index';
 
 @Component({
     selector: 'choose-item',
@@ -10,7 +10,7 @@ import { BasketService, Fish } from '../shared/index';
 })
 export class ChooseItemComponent {
     
-    @Input() item : any;
+    @Input() item : Living;
     
     constructor(private basketService : BasketService) {}
     
