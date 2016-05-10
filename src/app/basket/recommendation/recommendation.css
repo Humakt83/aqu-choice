@@ -1,0 +1,8 @@
+.recommendation {
+    margin-bottom: 5px;
+    background-color: rgb(60, 15, 232);
+    border-radius: 15px;
+    color: rgb(255, 227, 194);
+    padding: 5px;
+    padding-left: 15px;
+}
