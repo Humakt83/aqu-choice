@@ -3,18 +3,18 @@
     <div class="controls">
         <label>Hae&nbsp;<input type="text" placeholder="Kirjoita kalan tai kasvin nimi" [(ngModel)]="query"></label>
         <label><input type="checkbox" [(ngModel)]="scientific">Tieteellisistä nimistä</label>
-        <label><select (change)="changeTank($event.target.value)">
+        <label><input type="number" list="tankSize" min="40" max="50000" step="20" value="200" (change)="changeTank($event.target.value)"><datalist id="tankSize">
             <option>40</option>
             <option>60</option>
             <option>100</option>
             <option>150</option>
-            <option selected>200</option>
+            <option>200</option>
             <option>250</option>
             <option>300</option>
             <option>400</option>
             <option>500</option>
             <option>1000</option>
-        </select>&nbsp;Tilavuus l</label>
+        </datalist>&nbsp;Tilavuus l</label>
     </div>
     <choose-item *ngFor="let living of life | chooseFilter: query : scientific : size" [item]="living"></choose-item>
 </div>
