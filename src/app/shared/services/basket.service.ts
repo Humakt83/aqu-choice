@@ -8,7 +8,7 @@ export class BasketService {
     
     basket: Observable<BasketItem[]> = new BehaviorSubject<BasketItem[]>();
     
-    tankSize: number = 200;
+    tankSize: number = 1000;
     
     constructor(private choiceService: ChoiceService) {}
 	

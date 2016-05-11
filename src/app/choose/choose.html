@@ -1,9 +1,9 @@
 <div class="choose">
     <div class="title"><h2>Valitse</h2></div>
     <div class="controls">
-        <label>Hae&nbsp;<input type="text" placeholder="Kirjoita kalan tai kasvin nimi" [(ngModel)]="query"></label>
-        <label><input type="checkbox" [(ngModel)]="scientific">Tieteellisistä nimistä</label>
-        <label><input type="number" list="tankSize" min="40" max="50000" step="20" value="200" (change)="changeTank($event.target.value)"><datalist id="tankSize">
+        <label>Hae&nbsp;<input class="search" type="text" placeholder="Kirjoita kalan tai kasvin nimi" [(ngModel)]="query"></label>
+        <label><input class="scientificCheck" type="checkbox" [(ngModel)]="scientific">Tieteellisistä nimistä</label>
+        <label><input type="number" list="tankSize" min="40" max="50000" step="20" value="1000" (change)="changeTank($event.target.value)"><datalist id="tankSize">
             <option>40</option>
             <option>60</option>
             <option>100</option>
@@ -14,7 +14,14 @@
             <option>400</option>
             <option>500</option>
             <option>1000</option>
-        </datalist>&nbsp;Tilavuus l</label>
+        </datalist>&nbsp;Tilavuus l</label>         
     </div>
-    <choose-item *ngFor="let living of life | chooseFilter: query : scientific : size" [item]="living"></choose-item>
+    <div class="controls">
+        <span>Halutuilla vesiarvoilla&nbsp;</span>
+        <label><input type="number" min="0" max="20" [value]="customWater.minPH" (change)="changePH($event.target.value)">pH</label>
+        <label><input type="number" min="0" max="20" [value]="customWater.minDH" (change)="changeDH($event.target.value)">dH</label>
+        <label><input type="number" min="0" max="40" [value]="customWater.minTemp" (change)="changeTemp($event.target.value)">ºC</label>
+        <button class="toggleUseCustomWater" (click)="useCustomWater = !useCustomWater">{{useCustomWater ? 'Poista' : 'Aseta'}}</button>
+    </div>
+    <choose-item *ngFor="let living of life | chooseFilter: query : scientific : size : useCustomWater : customWater" [item]="living"></choose-item>
 </div>
