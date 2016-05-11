@@ -28,10 +28,11 @@ button.toggleUseCustomWater {
     background-color: rgb(255, 227, 194);
     border: 1px solid rgb(255, 227, 194);
     color: rgb(60, 15, 232);
-    padding: 3px 12px;
+    padding: 1px 12px;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
+    font-size: 13px;
+    font-weight: bolder;
     border-radius: 3px;
     box-shadow: 0 4px #999;
 }
