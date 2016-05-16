@@ -1,4 +1,26 @@
 <div class="info-bg">
     <div class="info">
+        <button class="infobtn" (click)="showModal()">Info</button>
+    </div>
+</div>
+
+<div *ngIf="displayModal" id="infoModal" class="modal" (click)="hideModal($event)">
+    <div class="modal-content">
+        <span class="close" (click)="hideModal($event)">x</span>
+        <h3>Info</h3>
+        <p>
+            Tämä sivusto on tarkoitettu helpottamaan akvaristin elämää sopivien vesiarvojen valinnassa. 
+            Tai vaihtoehtoisesti sopivien lajien valitsemisessa halutuilla vesiarvoilla. Myös akvaarion tilavuuden voi antaa, mikä auttaa valitsemaan lajit, joille akvaario on tarpeeksi tilava. 
+        </p>
+        <p>
+            <strong>Huomioi</strong>, että tämä sivusto ei ota kantaa viihtyvätkö lajit muuten keskenään käyttäytymiseltään ja ruokatavoiltaan (kuten syökö kala kasveja tai muita pienempiä kaloja).
+        </p>
+        <p>
+            Valitse-kohdasta voit hakea sinua kiinnostavat lajit ja/tai suodattaa lajit, jotka eivät vastaa annettuja vesiarvoja, lämpötilaa tai akvaarion tilavuutta.
+            Klikkaamalla +-merkkiä lajin kohdalla kyseinen laji lisätään Valitut-osioon. Lajit korostetaan punaisella, jos ne eivät ole yhteensopivia vesiarvoiltaan valittujen lajien kanssa.
+        </p>
+        <p>
+            Valitut-kohdassa näet valitsemasi lajit ja niille suositellut vesiarvot. Punaisella korostetaan lajit, jotka eivät ole yhteensopivia toisten valittujen lajien kanssa.
+        </p>
     </div>
 </div>
