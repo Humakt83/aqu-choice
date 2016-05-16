@@ -1,5 +1,5 @@
 import { Component, OnInit } from 'angular2/core';
-import { RecommendationService } from '../../shared/index';
+import { RecommendationService, BasketService } from '../../shared/index';
 
 @Component({
     selector: 'recommendation',
@@ -10,7 +10,7 @@ export class RecommendationComponent implements OnInit {
     
     message: string;
     
-    constructor(private recommendationService: RecommendationService) {}
+    constructor(private recommendationService: RecommendationService, private basketService: BasketService) {}
     
     ngOnInit() {        
         this.recommendationService.recommendedWater

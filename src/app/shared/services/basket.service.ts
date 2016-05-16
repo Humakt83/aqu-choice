@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class BasketService {
     
-    basket: Observable<BasketItem[]> = new BehaviorSubject<BasketItem[]>();
+    basket: Observable<BasketItem[]> = new BehaviorSubject<BasketItem[]>([]);
     
     tankSize: number = 1000;
     

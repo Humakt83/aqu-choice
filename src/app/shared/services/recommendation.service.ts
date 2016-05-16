@@ -10,7 +10,7 @@ import 'rxjs/observable/throw';
 @Injectable()
 export class RecommendationService {
     
-    recommendedWater: Observable<string> = new BehaviorSubject<string>();
+    recommendedWater: Observable<string> = new BehaviorSubject<string>('');
     
     constructor(private basketService: BasketService, private choiceService: ChoiceService) {
         this.basketService.basket

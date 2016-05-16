@@ -6,3 +6,8 @@
     padding: 5px;
     padding-left: 15px;
 }
+
+.recommendationTankSize {
+    float: right;
+    margin-right: 15px;
+}
