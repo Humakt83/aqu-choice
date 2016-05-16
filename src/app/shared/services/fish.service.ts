@@ -17,7 +17,7 @@ export class FishService {
         new Fish('Pangio kuhlii', 'Piikkisilmä', new OptimalWater(5, 7.5, 0, 11.9, 24, 28), 63),
         new Fish('Crossocheilus langei', 'Leväbarbi', new OptimalWater(6.5, 8, 5, 14.9, 24, 26), 325),
         new Fish('Chromobotia macracanthus', 'Tiikerinuoliainen', new OptimalWater(5.5, 7, 0, 14.9, 24, 29), 720),
-        new Fish('Pterophyllum scalare Callus', 'Lehtikala', new OptimalWater(6, 7.5, 0, 14.9, 24, 30), 325),
+        new Fish('Pterophyllum scalare', 'Lehtikala', new OptimalWater(6, 7.5, 0, 14.9, 24, 30), 325),
         new Fish('Paracheidoron innesi', 'Neontetra', new OptimalWater(5.5, 7, 0, 9.9, 22, 27), 63),
         new Fish('Paracheidoron axelrodi', 'Kardinaalitetra', new OptimalWater(5.5, 7, 0, 9.9, 24, 29), 63),
         new Fish('Hyphessobrycon pulchripinnis', 'Sitruunatetra', new OptimalWater(5.5, 7, 0, 11.9, 23, 27), 63),
