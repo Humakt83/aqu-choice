@@ -1,5 +1,5 @@
 import { Component, Input } from 'angular2/core';
-import { BasketService, Fish, Living } from '../shared/index';
+import { BasketService, Fish, Living, Mollusca } from '../shared/index';
 
 @Component({
     selector: 'choose-item',
@@ -23,6 +23,8 @@ export class ChooseItemComponent {
     }
     
     styleColor() {
-        return this.item instanceof Fish ? 'rgb(60, 15, 232)' : 'rgb(93, 102, 64)';
+        if (this.item instanceof Fish) return 'rgb(60, 15, 232)';
+        if (this.item instanceof Mollusca) return 'rgb(200, 120, 120)';
+        return 'rgb(93, 102, 64)';
     }
 }

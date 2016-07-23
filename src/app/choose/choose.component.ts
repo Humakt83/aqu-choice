@@ -1,6 +1,6 @@
 import { Component, OnInit } from 'angular2/core';
 import { ChooseItemComponent } from './choose-item.component';
-import { PlantService, FishService, BasketService, Living, OptimalWater } from '../shared/index';
+import { PlantService, FishService, BasketService, Living, OptimalWater, MolluscaService } from '../shared/index';
 import { ChooseFilterPipe } from './choose-filter.pipe';
 import 'rxjs/add/operator/combineLatest';
 
@@ -19,11 +19,12 @@ export class ChooseComponent implements OnInit {
     customWater : OptimalWater = new OptimalWater(7, 7, 7, 7, 25, 25);
     useCustomWater: boolean = false;
     
-    constructor(private plantService: PlantService, private fishService: FishService, private basketService: BasketService) {}
+    constructor(private plantService: PlantService, private fishService: FishService, private basketService: BasketService, private molluscaService: MolluscaService) {}
     
     ngOnInit() {
         this.plantService.getPlants()
             .combineLatest(this.fishService.getFish(), (x, y) => x.concat(y))
+            .combineLatest(this.molluscaService.getMollusca(), (x, y) => x.concat(y))
             .subscribe(
                 (result: Living[]) => this.life = result,
                 error => console.error(error),
