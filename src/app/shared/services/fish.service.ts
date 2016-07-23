@@ -42,6 +42,16 @@ export class FishService {
         new Fish('Synodantis nigriventris', 'Selkäuimari', new OptimalWater(6, 8, 0, 14.9, 22, 28), 100),
         new Fish('Carassius auratus', 'Kultakala', new OptimalWater(6, 7.5, 5, 20, 4, 30), 430),
         new Fish('Epalzeorhynchos bicolor', 'Tulipyrstö', new OptimalWater(6, 7.5, 0, 14.9, 2, 28), 240),
-        new Fish('Puntigrus tetrazona', 'Tiikeribarbi', new OptimalWater(6, 7.5, 0, 14.9, 22, 28), 140)
+        new Fish('Puntigrus tetrazona', 'Tiikeribarbi', new OptimalWater(6, 7.5, 0, 14.9, 22, 28), 140),
+        new Fish('Barbodes semifasciolatus', 'Messinkibarbi', new OptimalWater(6, 8, 0, 14.9, 18, 25), 100),
+        new Fish('Brachydanio rerio', 'Seeprakala', new OptimalWater(6, 7.5, 0, 14.9, 20, 28), 84),
+        new Fish('Pangio myersi', 'Siaminpiikkisilmä', new OptimalWater(6, 7.5, 0, 11.9, 24, 28), 84),
+        new Fish('Pangio malayna', 'Kiilapiikkisilmä', new OptimalWater(6, 7.5, 0, 11.9, 24, 28), 45),
+        new Fish('Pangio semicincta', 'Aaltopiikkisilmä', new OptimalWater(6, 7.5, 0, 14.9, 24, 28), 63),
+        new Fish('Corydoras panda', 'Pandamonninen', new OptimalWater(6, 7, 0, 9.9, 22, 25), 73),
+        new Fish('Corydoras paleatus', 'Täplämonninen', new OptimalWater(6, 7.5, 0, 14.9, 18, 26), 73),
+        new Fish('Spectracanthicus punctatissimus', 'Helmitähtipleko', new OptimalWater(6, 7, 0, 9.9, 26, 29), 200),
+        new Fish('Otacinclus hoppei', 'Täplänuolimonni', new OptimalWater(5.5, 7, 0, 9.9, 24, 28), 45),
+        new Fish('Panaqolus albivermis', 'Mustapleko L 204', new OptimalWater(6.5, 8, 0, 14.9, 25, 29), 200),
     ];
 }
