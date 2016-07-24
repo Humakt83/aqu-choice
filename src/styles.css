@@ -1,6 +1,7 @@
 body {
     background-color: rgb(143, 255, 237);
     height: 100%;
+    overflow-x: hidden;
 }
 
 .title {
@@ -14,4 +15,14 @@ body {
 input {
     width: 60px;
     margin-left: 3px;
+}
+
+footer {
+    padding-left: 2em;
+    text-align: left;
+    color: rgb(60, 15, 232);
+    font-size: smaller;
+    font-weight: 500;
+    overflow-y: hidden;
+    width: 100%;
 }
