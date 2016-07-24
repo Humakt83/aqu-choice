@@ -15,7 +15,7 @@ export class PlantService {
     
     private plantsArray : Plant[] = [
         new Plant('Crinum calamistratum', 'Kiharakriinumi', new OptimalWater(5.8, 7.5, 2, 12, 23, 26)),
-        new Plant('Ceratophyllum submersum', 'Hentokarvalehti', new OptimalWater(6.5, 8.5, 0, 20, 22, 28)),    
+        new Plant('Ceratophyllum submersum', 'Hentokarvalehti', new OptimalWater(6.5, 8.5, 0, 20, 22, 28)),
         new Plant('Taxiphyllum barbieri', 'Jaavansammal', new OptimalWater(5.5, 8.5, 0, 20, 18, 26)),
         new Plant('Taxiphyllum barbieri', 'Kelluhankasammal', new OptimalWater(6, 7.5, 0, 20, 10, 28)),
         new Plant('Microsorum pteropus', 'Jaavansaniainen', new OptimalWater(5, 8, 0, 20, 20, 28)),
@@ -33,6 +33,14 @@ export class PlantService {
         new Plant('Elodea canadensis', 'Kanadanvesirutto', new OptimalWater(6.5, 8.5, 6, 20, 15, 22)),
         new Plant('Echidonorus `Rubin`', 'Rubiinivesimiekka', new OptimalWater(6, 8, 4, 20, 22, 30)),
         new Plant('Echidonorus `Red Special`', 'Ruostevesimiekka', new OptimalWater(6, 8, 4, 30, 22, 28)),
-        new Plant('Echidonorus grisebachii', 'Amazoninvesimiekka', new OptimalWater(6, 8, 0, 20, 22, 28))
+        new Plant('Echidonorus grisebachii', 'Amazoninvesimiekka', new OptimalWater(6, 8, 0, 20, 22, 28)),
+        new Plant('Anubias barteri var. barteri', 'Herttakeihäslehti', new OptimalWater(5.5, 8, 0, 30, 22, 26)),
+        new Plant('Anubias barteri var. coffeifolia', 'Kahvikeihäslehti', new OptimalWater(5.5, 8, 0, 30, 22, 28)),
+        new Plant('Saururus cernuus', 'Herttalehti', new OptimalWater(6, 8, 0, 30, 18, 24)),
+        new Plant('Gymnocoronis spilanthoides', 'Vesiasteri', new OptimalWater(6.5, 8, 2, 12, 15, 28)),
+        new Plant('Microsorum pteropus', 'Jaavansaniainen', new OptimalWater(5, 8, 0, 30, 20, 28)),
+        new Plant('Cryptocorune xwillisii', 'Kääpiömelalehti', new OptimalWater(6, 7.5, 0, 30, 22, 28)),
+        new Plant('Cryptocorune undulata', 'Aaltomelalehti', new OptimalWater(6, 8, 0, 30, 22, 26)),
+        new Plant('Eleocharis acicularis', 'Hapsiluikka', new OptimalWater(6, 8.5, 0, 30, 15, 24))
     ];
 }
