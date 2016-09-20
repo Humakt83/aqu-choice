@@ -2,4 +2,7 @@
     <div class="title"><h2>Valitut</h2></div>
     <recommendation></recommendation>
     <basket-item *ngFor="let item of items" [item]="item"></basket-item>
+    <div class="toAquScape" *ngIf="doesBasketContainPlants()">
+        <a [href]="aquScapeUrl()">Suunnittele akvaarion sisustus</a>
+    </div>
 </div>

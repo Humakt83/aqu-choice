@@ -1,7 +1,9 @@
 import { Component, OnInit } from 'angular2/core';
 import { BasketItemComponent } from './basket-item.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
-import { BasketService, BasketItem } from '../shared/index';
+import { BasketService, BasketItem, Plant } from '../shared/index';
+
+const AQUSCAPE_URL = 'http://localhost:5555?'
 
 @Component({
     selector: 'basket',
@@ -17,6 +19,15 @@ export class BasketComponent implements OnInit {
     
     ngOnInit() {        
         this.basketService.basket.subscribe(result => this.items = result);
+    }
+
+    doesBasketContainPlants() : boolean {
+        return this.items.filter(item => item.item instanceof Plant).length > 0;
+    }
+
+    aquScapeUrl() {
+        const params = this.items.filter(item => item.item instanceof Plant).map(plant => 'plants=' + plant.id).reduce((arg1, arg2) => arg1 + "&" + arg2);
+        return AQUSCAPE_URL + params;
     }
     
 }
