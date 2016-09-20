@@ -48,7 +48,7 @@ export class ChooseComponent implements OnInit {
     }
     
     changeDH(dH : number) {
-        this.customWater = new OptimalWater(this.customWater.minPH, this.customWater.maxPH, dH, dH this.customWater.minTemp, this.customWater.maxTemp);
+        this.customWater = new OptimalWater(this.customWater.minPH, this.customWater.maxPH, dH, dH, this.customWater.minTemp, this.customWater.maxTemp);
     }
     
     changeTemp(temp : number) {
