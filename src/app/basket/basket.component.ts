@@ -26,7 +26,7 @@ export class BasketComponent implements OnInit {
     }
 
     aquScapeUrl() {
-        const params = this.items.filter(item => item.item instanceof Plant).map(plant => 'plants=' + plant.id).reduce((arg1, arg2) => arg1 + "&" + arg2);
+        const params = this.items.filter(item => item.item instanceof Plant).map(plant => 'plants=' + (<Plant>plant.item).identificationNumber).reduce((arg1, arg2) => arg1 + "&" + arg2);
         return AQUSCAPE_URL + params;
     }
     
