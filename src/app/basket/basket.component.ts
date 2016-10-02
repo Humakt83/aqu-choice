@@ -3,7 +3,7 @@ import { BasketItemComponent } from './basket-item.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { BasketService, BasketItem, Plant } from '../shared/index';
 
-const AQUSCAPE_URL = 'http://localhost:5555?'
+const AQUSCAPE_URL = 'http://http://ukkosnetti.fi/aqu-scape/?'
 
 @Component({
     selector: 'basket',
