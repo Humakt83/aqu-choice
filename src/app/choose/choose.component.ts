@@ -19,8 +19,8 @@ export class ChooseComponent implements OnInit {
     
     ngOnInit() {
         this.plantService.getPlants()
-            .combineLatest(this.fishService.getFish(), (x, y) => x.concat(y))
-            .combineLatest(this.molluscaService.getMollusca(), (x, y) => x.concat(y))
+            .combineLatest(this.fishService.getFish(), (x: Living[], y: Living[]) => x.concat(y))
+            .combineLatest(this.molluscaService.getMollusca(), (x: Living[], y: Living[]) => x.concat(y))
             .subscribe(
                 (result: Living[]) => {
                     result.sort((a : Living, b : Living) => {

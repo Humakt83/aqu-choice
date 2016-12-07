@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const del = require('del');
 const typescript = require('gulp-typescript');
-const tscConfig = require('./tsconfig.json');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
@@ -11,9 +10,10 @@ gulp.task('clean', function () {
 });
 
 gulp.task('compile', ['clean'], function () {
+    var tsProject = typescript.createProject('tsconfig.json');
     return gulp
-        .src(['node_modules/@angular/platform-browser/src/browser.d.ts', 'src/**/*.ts'])
-        .pipe(typescript(tscConfig.compilerOptions))
+        .src(['src/**/*.ts', 'typings/index.d.ts'])
+        .pipe(tsProject())
         .pipe(gulp.dest('dist'));
 });
 
