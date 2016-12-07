@@ -3,9 +3,7 @@ import { BasketService, BasketItem, Fish, Mollusca } from '../shared/index';
 
 @Component({
     selector: 'basket-item',
-    template:   `<div class="basket-item" [attr.data-tip]="item.toString()" [class.basket-item-incompatible]="!isCompatibleWithOthersInBasket()" [style.background-color]="styleColor()">
-                    {{item.item.name}}<span class="removeFromBasket" (click)="removeFromBasket()">-</span>
-                </div>`,
+    templateUrl: 'app/basket/basket-item.html',
     styleUrls: ['app/basket/basket-item.css']
 })
 export class BasketItemComponent {

@@ -14,9 +14,12 @@ export class BasketService {
     private basketItems: BasketItem[] = [];
     
     addToBasket(obj: Living, amount: number = 1) {
-        for (let x = 0; x < amount; x++) {
-            this.basketItems.push(new BasketItem(1 + this.basketItems.length, obj));
-        }       
+        let existingItem = this.basketItems.filter(item => item.item === obj)[0];
+        if (existingItem) {
+            existingItem.amount += amount;
+        } else {
+            this.basketItems.push(new BasketItem(1 + this.basketItems.length, obj, amount));
+        } 
         this.basket.next(this.basketItems);
 	}
     
