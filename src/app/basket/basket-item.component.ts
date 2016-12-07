@@ -1,4 +1,4 @@
-import { Component, Input } from 'angular2/core';
+import { Component, Input } from '@angular/core';
 import { BasketService, BasketItem, Fish, Mollusca } from '../shared/index';
 
 @Component({

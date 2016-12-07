@@ -1,14 +1,13 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import { Plant, OptimalWater } from '../index';
-import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class PlantService {
     
-    plants : Observable<Plant[]> = new BehaviorSubject<Plant[]>([]);
+    plants : BehaviorSubject<Plant[]> = new BehaviorSubject<Plant[]>([]);
     
-    getPlants() : Observable<Plant[]> {
+    getPlants() : BehaviorSubject<Plant[]> {
         this.plants.next(this.plantsArray);
         return this.plants;
     }

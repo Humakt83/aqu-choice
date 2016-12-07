@@ -1,15 +1,11 @@
-import { Component, OnInit } from 'angular2/core';
-import { ChooseItemComponent } from './choose-item.component';
+import { Component, OnInit } from '@angular/core';
 import { PlantService, FishService, BasketService, Living, OptimalWater, MolluscaService, Plant, Mollusca, Fish } from '../shared/index';
-import { ChooseFilterPipe } from './choose-filter.pipe';
 import 'rxjs/add/operator/combineLatest';
 
 @Component({
     selector: 'choose',
     templateUrl: 'app/choose/choose.html',
-    styleUrls: ['app/choose/choose.css'],
-    directives: [ChooseItemComponent],
-    pipes: [ChooseFilterPipe]
+    styleUrls: ['app/choose/choose.css']
 })
 export class ChooseComponent implements OnInit {
     

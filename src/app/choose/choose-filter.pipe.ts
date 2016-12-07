@@ -1,12 +1,12 @@
-import { Pipe } from 'angular2/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { Living, Plant, Fish, OptimalWater } from '../shared/index';
 
 @Pipe({ 
     name: 'chooseFilter'
 })
-export class ChooseFilterPipe {
+export class ChooseFilterPipe implements PipeTransform {
     
-    transform(objects: Living[], query: string, scientific: boolean, size: number, useCustomWater: boolean, customWater: OptimalWater) {
+    transform(objects: Living[], query: string, scientific: boolean, size: number, useCustomWater: boolean, customWater: OptimalWater): Living[] {
         let filtered : Living[] = this.filterByName(objects, query, scientific);
         if (useCustomWater) {
             filtered = this.filterByCustomWater(filtered, customWater);
@@ -14,7 +14,7 @@ export class ChooseFilterPipe {
         return this.filterByTankSize(filtered, size);
     }
     
-    private filterByName(objects: Living[], query: string, scientific: boolean) {
+    private filterByName(objects: Living[], query: string, scientific: boolean): Living[] {
         if(scientific && query) {
             return objects.filter(living => living.scientificName.toLowerCase().includes(query.toLowerCase()));
         } else if(query) {
@@ -23,11 +23,11 @@ export class ChooseFilterPipe {
         return objects;
     }
     
-    private filterByTankSize(objects: Living[], tankSize: number) {
+    private filterByTankSize(objects: Living[], tankSize: number): Living[] {
         return objects.filter(living => living instanceof Plant || (<Fish>living).minimumTankSize <= tankSize);
     }
     
-    private filterByCustomWater(objects: Living[], customWater: OptimalWater) {
+    private filterByCustomWater(objects: Living[], customWater: OptimalWater): Living[] {
         return objects.filter(living => {
             let optWater = living.optimalWater;
             let tempFits: boolean = customWater.minTemp >= optWater.minTemp && customWater.minTemp <= optWater.maxTemp;

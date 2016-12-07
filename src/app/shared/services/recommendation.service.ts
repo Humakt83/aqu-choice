@@ -1,8 +1,7 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import { OptimalWater, BasketItem } from '../index';
 import { BasketService } from './basket.service';
 import { ChoiceService } from './choice.service';
-import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/map';
 import 'rxjs/observable/throw';
@@ -10,7 +9,7 @@ import 'rxjs/observable/throw';
 @Injectable()
 export class RecommendationService {
     
-    recommendedWater: Observable<string> = new BehaviorSubject<string>('');
+    recommendedWater: BehaviorSubject<string> = new BehaviorSubject<string>('');
     
     constructor(private basketService: BasketService, private choiceService: ChoiceService) {
         this.basketService.basket

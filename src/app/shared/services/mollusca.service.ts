@@ -1,14 +1,13 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import { Mollusca, OptimalWater } from '../index';
-import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class MolluscaService {
   
-    mollusca : Observable<Mollusca[]> = new BehaviorSubject<Mollusca[]>([]);
+    mollusca : BehaviorSubject<Mollusca[]> = new BehaviorSubject<Mollusca[]>([]);
     
-    getMollusca() : Observable<Mollusca[]> {
+    getMollusca() : BehaviorSubject<Mollusca[]> {
         this.mollusca.next(this.molluscaArray);
         return this.mollusca;
     }

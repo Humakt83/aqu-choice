@@ -1,15 +1,12 @@
-import { Component, OnInit } from 'angular2/core';
-import { BasketItemComponent } from './basket-item.component';
-import { RecommendationComponent } from './recommendation/recommendation.component';
+import { Component, OnInit } from '@angular/core';
 import { BasketService, BasketItem, Plant } from '../shared/index';
 
-const AQUSCAPE_URL = 'http://http://ukkosnetti.fi/aqu-scape/?'
+const AQUSCAPE_URL = 'http://ukkosnetti.fi/aqu-scape/?'
 
 @Component({
     selector: 'basket',
     templateUrl: 'app/basket/basket.html',
-    styleUrls: ['app/basket/basket.css'],
-    directives: [BasketItemComponent, RecommendationComponent]
+    styleUrls: ['app/basket/basket.css']
 })
 export class BasketComponent implements OnInit {
     

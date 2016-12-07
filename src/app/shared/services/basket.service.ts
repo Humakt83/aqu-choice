@@ -1,12 +1,11 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import { Living, ChoiceService, BasketItem, Fish } from '../index';
-import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class BasketService {
     
-    basket: Observable<BasketItem[]> = new BehaviorSubject<BasketItem[]>([]);
+    basket: BehaviorSubject<BasketItem[]> = new BehaviorSubject<BasketItem[]>([]);
     
     tankSize: number = 1000;
     

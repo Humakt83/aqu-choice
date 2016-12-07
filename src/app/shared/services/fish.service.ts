@@ -1,14 +1,13 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import { Fish, OptimalWater } from '../index';
-import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class FishService {
   
-    fish : Observable<Fish[]> = new BehaviorSubject<Fish[]>([]);
+    fish : BehaviorSubject<Fish[]> = new BehaviorSubject<Fish[]>([]);
     
-    getFish() : Observable<Fish[]> {
+    getFish() : BehaviorSubject<Fish[]> {
         this.fish.next(this.fishArray);
         return this.fish;
     }
@@ -41,7 +40,7 @@ export class FishService {
         new Fish('Poecilia reticulata', 'Miljoonakala', new OptimalWater(6.5, 8, 4, 20, 18, 28), 45),
         new Fish('Synodantis nigriventris', 'Selkäuimari', new OptimalWater(6, 8, 0, 14.9, 22, 28), 100),
         new Fish('Carassius auratus', 'Kultakala', new OptimalWater(6, 7.5, 5, 20, 4, 30), 430),
-        new Fish('Epalzeorhynchos bicolor', 'Tulipyrstö', new OptimalWater(6, 7.5, 0, 14.9, 2, 28), 240),
+        new Fish('Epalzeorhynchos bicolor', 'Tulipyrstö', new OptimalWater(6, 7.5, 0, 14.9, 22, 28), 240),
         new Fish('Puntigrus tetrazona', 'Tiikeribarbi', new OptimalWater(6, 7.5, 0, 14.9, 22, 28), 140),
         new Fish('Barbodes semifasciolatus', 'Messinkibarbi', new OptimalWater(6, 8, 0, 14.9, 18, 25), 100),
         new Fish('Brachydanio rerio', 'Seeprakala', new OptimalWater(6, 7.5, 0, 14.9, 20, 28), 84),
