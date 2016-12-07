@@ -9,6 +9,7 @@
     margin-bottom: 2px;
     margin-left: 5px;
     position: relative;
+    font-size: x-large;
 }
 
 .basket-item::before {
@@ -40,8 +41,10 @@
     padding: 2px;
     color: white;
     font-weight: bold;
-    margin-left: 4px;
     cursor: pointer;
+    font-size: medium;
+    position: relative;
+    white-space: nowrap;
 }
 
 .removeFromBasket:hover {
@@ -51,4 +54,35 @@
 
 .basket-item-incompatible {
     background-color: rgb(255, 39, 31) !important;
+}
+
+.removeFromBasketContainer {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    height: 100%;
+    width: 20px;
+}
+
+.removeFromBasketTop {
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+.removeFromBasketBottom {
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+}
+
+.choose-item-incompatible {
+    background-color: rgb(255, 39, 31) !important;
+}
+
+.adjustRemoveFromBasketToRight {
+    height: inherit;
+    margin-left: 5px;
+    display: inline-block;
 }

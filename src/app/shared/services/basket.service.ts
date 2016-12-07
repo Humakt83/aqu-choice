@@ -23,8 +23,11 @@ export class BasketService {
         this.basket.next(this.basketItems);
 	}
     
-    removeFromBasket(obj: BasketItem) {
-        this.basketItems = this.basketItems.filter((item) => item !== obj);
+    removeFromBasket(obj: BasketItem, amount: number = 1) {
+        obj.amount -= amount;
+        if (obj.amount <= 0) {
+            this.basketItems = this.basketItems.filter((item) => item !== obj);
+        }
         this.basket.next(this.basketItems);
     }
     

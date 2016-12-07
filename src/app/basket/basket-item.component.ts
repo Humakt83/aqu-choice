@@ -12,8 +12,8 @@ export class BasketItemComponent {
     
     constructor(private basketService : BasketService) {}
     
-    removeFromBasket() {
-        this.basketService.removeFromBasket(this.item);
+    removeFromBasket(amount: number = 1) {
+        this.basketService.removeFromBasket(this.item, amount);
     }
     
     isCompatibleWithOthersInBasket() {
