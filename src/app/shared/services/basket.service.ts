@@ -13,8 +13,10 @@ export class BasketService {
 	
     private basketItems: BasketItem[] = [];
     
-    addToBasket(obj: Living) {        
-        this.basketItems.push(new BasketItem(1 + this.basketItems.length, obj));
+    addToBasket(obj: Living, amount: number = 1) {
+        for (let x = 0; x < amount; x++) {
+            this.basketItems.push(new BasketItem(1 + this.basketItems.length, obj));
+        }       
         this.basket.next(this.basketItems);
 	}
     

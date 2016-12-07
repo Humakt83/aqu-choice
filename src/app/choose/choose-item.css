@@ -9,6 +9,7 @@
     margin-bottom: 2px;
     margin-left: 5px;
     position: relative;
+    font-size: x-large;
 }
 
 .choose-item::before {
@@ -35,13 +36,34 @@
     bottom:-25px;
 }
 
+.addToBasketContainer {
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    height: 100%;
+    width: 20px;
+}
+
 .addToBasket {
+    position: relative;
     border-radius: 30px;
     padding: 2px;
     color: white;
     font-weight: bold;
+    font-size: medium;
+    cursor: pointer;    
+}
+
+.addToBasketTop {
     margin-left: 4px;
-    cursor: pointer;
+    vertical-align: top;
+}
+
+.addToBasketBottom {
+    position: absolute;
+    bottom: 0px;
 }
 
 .addToBasket:hover {
@@ -51,4 +73,10 @@
 
 .choose-item-incompatible {
     background-color: rgb(255, 39, 31) !important;
+}
+
+.adjustAddToBasketToRight {
+    height: inherit;
+    margin-left: 5px;
+    display: inline-block;
 }

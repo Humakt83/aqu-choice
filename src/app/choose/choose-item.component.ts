@@ -3,9 +3,7 @@ import { BasketService, Fish, Living, Mollusca } from '../shared/index';
 
 @Component({
     selector: 'choose-item',
-    template:   `<div class="choose-item" [attr.data-tip]="item.toString()" [class.choose-item-incompatible]="isIncompatibleWithBasket()" [style.background-color]="styleColor()">
-                    {{item.name}}<span class="addToBasket" (click)="addToBasket()">+</span>
-                </div>`,
+    templateUrl:   'app/choose/choose-item.html',
     styleUrls: ['app/choose/choose-item.css']
 })
 export class ChooseItemComponent {
@@ -14,8 +12,8 @@ export class ChooseItemComponent {
     
     constructor(private basketService : BasketService) {}
     
-    addToBasket() {
-        this.basketService.addToBasket(this.item);
+    addToBasket(amount: number = 1) {
+        this.basketService.addToBasket(this.item, amount);
     }
     
     isIncompatibleWithBasket() {
