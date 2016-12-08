@@ -1,20 +1,36 @@
 import { Injectable } from '@angular/core';
-import { OptimalWater, BasketItem } from '../index';
+import { OptimalWater, BasketItem, Fish, calculateRequiredLitresForFish } from '../index';
 import { BasketService } from './basket.service';
 import { ChoiceService } from './choice.service';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
 import 'rxjs/observable/throw';
 
 @Injectable()
 export class RecommendationService {
     
     recommendedWater: BehaviorSubject<string> = new BehaviorSubject<string>('');
+    litresRequiredForFish: BehaviorSubject<number> = new BehaviorSubject<number>(0);
     
     constructor(private basketService: BasketService, private choiceService: ChoiceService) {
         this.basketService.basket
             .map((items : BasketItem[]) => items ? items.map(item => item.item.optimalWater) : [])
             .subscribe((waters: OptimalWater[]) => this.handleChangedWaters(waters));
+        this.basketService.basket
+            .map((items : BasketItem[]) => items ? items.filter(i => i.item instanceof Fish) : [])
+            .subscribe((items: BasketItem[]) => this.setLitresRequiredForFish(items))
+    }
+
+    private setLitresRequiredForFish(items: BasketItem[]) {
+        let fish: Fish[] = [];
+        items.forEach(item => {
+            for (let x = 0; x < item.amount; x++) {
+                fish.push(item.item);
+            }
+        });
+        let requiredLitres = calculateRequiredLitresForFish(fish);
+        this.litresRequiredForFish.next(requiredLitres);
     }
     
     private handleChangedWaters(waters: OptimalWater[]) {

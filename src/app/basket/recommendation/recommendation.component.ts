@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecommendationService, BasketService } from '../../shared/index';
+import { RecommendationService } from '../../shared/index';
 
 @Component({
     selector: 'recommendation',
@@ -9,12 +9,15 @@ import { RecommendationService, BasketService } from '../../shared/index';
 export class RecommendationComponent implements OnInit {
     
     message: string;
+    minimumRequiredLitres: number;
     
-    constructor(private recommendationService: RecommendationService, private basketService: BasketService) {}
+    constructor(private recommendationService: RecommendationService) {}
     
     ngOnInit() {        
         this.recommendationService.recommendedWater
             .subscribe((result : string) => this.message = result);
+        this.recommendationService.litresRequiredForFish
+            .subscribe((result: number) => this.minimumRequiredLitres = result);
     }
     
 }

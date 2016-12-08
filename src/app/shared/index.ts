@@ -10,3 +10,4 @@ export * from './objects/mollusca';
 export * from './objects/plant';
 export * from './objects/optimal-water';
 export * from './objects/basket-item';
+export * from './util/fishtanksizecalculator';
