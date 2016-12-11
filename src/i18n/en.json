@@ -1,0 +1,33 @@
+{
+    "Recommendation": {
+        "minaquarium": "Min. aquarium size",
+        "recommendedwaterparams": "Recommended water parameters"
+    },
+    "Basket": {
+        "title": "Chosen",
+        "plan": "Aquascape"
+    },
+    "Choose": {
+        "title": "Choose",
+        "search": "Search",
+        "searchplaceholder": "Name of the species",
+        "scientific": "From scientific names",
+        "volume": "Volume l",
+        "waterparams": "Water parameters",
+        "set": "Set",
+        "unset": "Unset"
+    },
+    "Info": {
+        "title": "Info",
+        "purpose": "Purpose of this service is to help an aquarist to select fitting livestock for the water parameters of the aquarium.",
+        "note": "Note",
+        "notetext": " that this service does not take into the account or tell the behavior and the diet of the fish. Some fish can be aggressive or eat smaller fish",
+        "choose": "From the Choose-section you can search and filter for species you are most interested in. Species that are unsuitable with already selected species will be highlighted red.",
+        "basket": "In the Chosen-section are shown the selected species and recommended water parameters for them. Again red is being used to highlight species that are not suitable with others."
+    },
+    "Footer": {
+        "sourcesheader": "Sources used",
+        "sources": "Akvaariokasvit (Markku Varjo, 2011), Akvaariokalat 2.0 (Markku Varjo, 2014)"
+    }
+
+}

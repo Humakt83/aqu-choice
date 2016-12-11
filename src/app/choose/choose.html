@@ -21,7 +21,7 @@
         <label><input type="number" min="0" max="20" [value]="customWater.minPH" (change)="changePH($event.target.value)">pH</label>
         <label><input type="number" min="0" max="20" [value]="customWater.minDH" (change)="changeDH($event.target.value)">dH</label>
         <label><input type="number" min="0" max="40" [value]="customWater.minTemp" (change)="changeTemp($event.target.value)">ºC</label>
-        <button class="toggleUseCustomWater" (click)="useCustomWater = !useCustomWater">{{useCustomWater ? 'Choose.unset' : 'Choose.set' | translate}}</button>
+        <button class="toggleUseCustomWater" (click)="useCustomWater = !useCustomWater">{{(useCustomWater ? 'Choose.unset' : 'Choose.set') | translate}}</button>
     </div>
     <choose-item *ngFor="let living of life | chooseFilter: query : scientific : size : useCustomWater : customWater" [item]="living"></choose-item>
 </div>

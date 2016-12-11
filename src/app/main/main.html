@@ -1,4 +1,8 @@
 <info></info>
+<div class="flag">
+    <img *ngIf="selectedLanguage === 'fi'" src="fi.gif" (click)="toggleLanguage()">
+    <img *ngIf="selectedLanguage === 'en'" src="en.gif" (click)="toggleLanguage()">
+</div>
 <choose></choose>
 <basket></basket>
 <footer>

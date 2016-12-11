@@ -26,3 +26,25 @@ footer {
     overflow-y: hidden;
     width: 100%;
 }
+
+.flag {
+    position: absolute;
+    top: 7px;
+    right: 0px;
+}
+
+.flag img {
+    width: 70%;
+    height: 70%;
+    border-radius: 5px;
+    border: 2px solid rgb(60, 15, 232);
+}
+
+.flag img:hover{
+    border-color: rgb(143, 255, 237);
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}

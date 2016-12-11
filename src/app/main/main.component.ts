@@ -7,8 +7,15 @@ import { TranslateService } from 'ng2-translate';
 })
 export class MainComponent {
 
-    constructor(translate: TranslateService) {
+    selectedLanguage = 'fi';
+
+    constructor(private translate: TranslateService) {
         translate.setDefaultLang('fi');
-        translate.use('fi');
+        translate.use(this.selectedLanguage);
+    }
+
+    toggleLanguage() {
+        this.selectedLanguage = this.selectedLanguage === 'fi'? 'en' : 'fi';
+        this.translate.use(this.selectedLanguage);
     }
 }
