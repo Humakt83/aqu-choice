@@ -1,8 +1,8 @@
 <div class="basket">
-    <div class="title"><h2>Valitut</h2></div>
+    <div class="title"><h2>{{'Basket.title' | translate}}</h2></div>
     <recommendation></recommendation>
     <basket-item *ngFor="let item of items" [item]="item"></basket-item>
     <div class="toAquScape" *ngIf="doesBasketContainPlants()">
-        <a class="toAquScapeButton" [href]="aquScapeUrl()">Suunnittele akvaarion sisustus</a>
+        <a class="toAquScapeButton" [href]="aquScapeUrl()">{{'Basket.plan' | translate}}</a>
     </div>
 </div>

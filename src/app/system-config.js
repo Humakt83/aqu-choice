@@ -9,6 +9,7 @@
       '@angular/http': 'lib/http.umd.js',
       '@angular/router': 'lib/router.umd.js',
       '@angular/forms': 'lib/forms.umd.js',
+      'ng2-translate': 'lib/ng2-translate.umd.js',
       "rxjs": 'lib/rxjs'
     },
     packages: {

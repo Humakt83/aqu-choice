@@ -1,8 +1,8 @@
 <div class="choose">
-    <div class="title"><h2>Valitse</h2></div>
+    <div class="title"><h2>{{'Choose.title' | translate}}</h2></div>
     <div class="controls">
-        <label>Hae&nbsp;<input class="search" type="text" placeholder="Kirjoita kalan tai kasvin nimi" [(ngModel)]="query"></label>
-        <label><input class="scientificCheck" type="checkbox" [(ngModel)]="scientific">Tieteellisistä nimistä</label>
+        <label>{{'Choose.search' | translate}}&nbsp;<input class="search" type="text" placeholder="{{'Choose.searchplaceholder' | translate}}" [(ngModel)]="query"></label>
+        <label><input class="scientificCheck" type="checkbox" [(ngModel)]="scientific">{{'Choose.scientific' | translate}}</label>
         <label><input type="number" list="tankSize" min="40" max="50000" step="20" value="1000" (change)="changeTank($event.target.value)"><datalist id="tankSize">
             <option>40</option>
             <option>60</option>
@@ -14,14 +14,14 @@
             <option>400</option>
             <option>500</option>
             <option>1000</option>
-        </datalist>&nbsp;Tilavuus l</label>         
+        </datalist>&nbsp;{{'Choose.volume' | translate}}</label>         
     </div>
     <div class="controls">
-        <span>Halutuilla vesiarvoilla&nbsp;</span>
+        <span>{{'Choose.waterparams' | translate}}&nbsp;</span>
         <label><input type="number" min="0" max="20" [value]="customWater.minPH" (change)="changePH($event.target.value)">pH</label>
         <label><input type="number" min="0" max="20" [value]="customWater.minDH" (change)="changeDH($event.target.value)">dH</label>
         <label><input type="number" min="0" max="40" [value]="customWater.minTemp" (change)="changeTemp($event.target.value)">ºC</label>
-        <button class="toggleUseCustomWater" (click)="useCustomWater = !useCustomWater">{{useCustomWater ? 'Poista' : 'Aseta'}}</button>
+        <button class="toggleUseCustomWater" (click)="useCustomWater = !useCustomWater">{{useCustomWater ? 'Choose.unset' : 'Choose.set' | translate}}</button>
     </div>
     <choose-item *ngFor="let living of life | chooseFilter: query : scientific : size : useCustomWater : customWater" [item]="living"></choose-item>
 </div>
