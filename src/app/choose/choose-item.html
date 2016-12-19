@@ -1,5 +1,5 @@
 <div class="choose-item" [attr.data-tip]="item.toString()" [class.choose-item-incompatible]="isIncompatibleWithBasket()" [style.background-color]="styleColor()">
-    {{item.name}}
+    {{getName()}}
     <div class="adjustAddToBasketToRight">
         <div class="addToBasketContainer">
             <span class="addToBasket addToBasketTop" (click)="addToBasket()">+</span>

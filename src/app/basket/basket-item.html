@@ -1,5 +1,5 @@
 <div class="basket-item" [attr.data-tip]="item.toString()" [class.basket-item-incompatible]="!isCompatibleWithOthersInBasket()" [style.background-color]="styleColor()">
-    {{item.amount}} {{item.item.name}}
+    {{item.amount}} {{getName()}}
     <div class="adjustRemoveFromBasketToRight">
         <div class="removeFromBasketContainer">
             <span class="removeFromBasket removeFromBasketTop" (click)="removeFromBasket()">-</span>

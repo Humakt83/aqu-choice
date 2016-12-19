@@ -1,16 +1,21 @@
 import { Component, Input } from '@angular/core';
-import { BasketService, Fish, Living, Mollusca } from '../shared/index';
+import { BasketService, Fish, Living, Mollusca, translateName } from '../shared/index';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
     selector: 'choose-item',
     templateUrl:   'app/choose/choose-item.html',
     styleUrls: ['app/choose/choose-item.css']
 })
-export class ChooseItemComponent {
+export class ChooseItemComponent{
     
     @Input() item : Living;
     
-    constructor(private basketService : BasketService) {}
+    constructor(private basketService : BasketService, private translateService: TranslateService) {}
+
+    getName() {
+        return translateName(this.translateService, this.item);   
+    }
     
     addToBasket(amount: number = 1) {
         this.basketService.addToBasket(this.item, amount);

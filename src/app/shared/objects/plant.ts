@@ -3,7 +3,7 @@ import { Living } from './living';
 
 export class Plant implements Living {
   
-    constructor(public identificationNumber: number, public scientificName: string, public name: string, public optimalWater: OptimalWater) {}
+    constructor(public identificationNumber: number, public scientificName: string, public name: string, public optimalWater: OptimalWater, public englishName: string) {}
   
     toString(): string {
         return `${this.scientificName}: (${this.optimalWater.toString()})`
