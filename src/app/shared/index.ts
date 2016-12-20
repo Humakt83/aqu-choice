@@ -12,3 +12,4 @@ export * from './objects/optimal-water';
 export * from './objects/basket-item';
 export * from './util/fishtanksizecalculator';
 export * from './util/livingname';
+export * from './storage/storage.service';

@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { MainComponent }   from './main/main.component';
 import { InfoComponent } from './info/info.component';
-import { BasketService, ChoiceService, FishService, MolluscaService, PlantService, RecommendationService } from './shared/index';
+import { BasketService, ChoiceService, FishService, MolluscaService, PlantService, RecommendationService, StorageService } from './shared/index';
 import { BasketComponent, BasketItemComponent, RecommendationComponent } from './basket/index';
 import { ChooseComponent, ChooseItemComponent, ChooseFilterPipe } from './choose/index';
 import { TranslateModule } from 'ng2-translate';
@@ -14,6 +14,6 @@ import { TranslateModule } from 'ng2-translate';
         ChooseFilterPipe],
     imports: [BrowserModule, HttpModule, FormsModule, TranslateModule.forRoot()],
     bootstrap: [MainComponent],
-    providers: [HttpModule, BasketService, ChoiceService, FishService, MolluscaService, PlantService, RecommendationService]
+    providers: [HttpModule, BasketService, ChoiceService, FishService, MolluscaService, PlantService, RecommendationService, StorageService]
 })
 export class AppModule {}

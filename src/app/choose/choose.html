@@ -22,6 +22,39 @@
         <label><input type="number" min="0" max="20" [value]="customWater.minDH" (change)="changeDH($event.target.value)">dH</label>
         <label><input type="number" min="0" max="40" [value]="customWater.minTemp" (change)="changeTemp($event.target.value)">ºC</label>
         <button class="toggleUseCustomWater" (click)="useCustomWater = !useCustomWater">{{(useCustomWater ? 'Choose.unset' : 'Choose.set') | translate}}</button>
+        <button class="addLiving" (click)="showModal()">{{'Choose.add' | translate}}</button>
     </div>
     <choose-item *ngFor="let living of life | chooseFilter: query : scientific : size : useCustomWater : customWater" [item]="living"></choose-item>
+</div>
+
+<div *ngIf="displayModal" id="infoModal" class="modal" (click)="hideModal($event)">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close" (click)="hideModal($event)">x</span>
+        <form id="addFishForm" submit="saveFish()" novalidate>
+            <div class="formSection">
+                <label for="modalScientificName">{{'Choose.addModal.scientificName' | translate}}</label>
+                <input type="text" id="modalScientificName" name="modalScientificName" [(ngModel)]="modalFish.scientificName" required>
+                <span *ngIf="modalFish.scientificName.length < 1" class="errorHelp">*</span>
+            </div>
+            <div class="formSection">
+                <label for="modalFinnishName">{{'Choose.addModal.finnishName' | translate}}</label>
+                <input type="text" id="modalFinnishName" name="modalFinnishName" [(ngModel)]="modalFish.name">
+            </div>
+            <div class="formSection">
+                <label for="modalEnglishName">{{'Choose.addModal.englishName' | translate}}</label>
+                <input type="text" id="modalEnglishName" name="modalEnglishName" [(ngModel)]="modalFish.englishName">
+            </div>
+            <div class="formSection">
+                <label for="modalSize">{{'Choose.addModal.lengthOfFish' | translate}}</label>
+                <input type="number" min="1" id="modalSize" name="modalSize" [(ngModel)]="modalFish.size" required>
+                <span *ngIf="!isNumber(modalFish.size) || modalFish.size < 1" class="errorHelp">*</span>
+            </div>
+            <div class="formSection">
+                <label for="modalTankSize">{{'Choose.addModal.minimumTankSize' | translate}}</label>
+                <input type="number" min="1" id="modalTankSize" name="modalTankSize" [(ngModel)]="modalFish.minimumTankSize" required>
+                <span *ngIf="!isNumber(modalFish.minimumTankSize) || modalFish.minimumTankSize < 1" class="errorHelp">*</span>
+            </div>
+            <button type="submit">{{'Choose.add' | translate}}</button>
+        </form>
+    </div>
 </div>

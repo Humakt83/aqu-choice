@@ -11,6 +11,8 @@ export class ChooseComponent implements OnInit {
     
     life : Living[] = [];
     size: number = 1000;
+    displayModal = false;
+    modalFish: Fish = new Fish('Scientific Name', '', new OptimalWater(6, 8, 2, 6, 20, 30), 100, 10, '');
     
     customWater : OptimalWater = new OptimalWater(7, 7, 7, 7, 25, 25);
     useCustomWater: boolean = false;
@@ -49,6 +51,23 @@ export class ChooseComponent implements OnInit {
     
     changeTemp(temp : number) {
         this.customWater = new OptimalWater(this.customWater.minPH, this.customWater.maxPH, this.customWater.minDH, this.customWater.maxDH, temp, temp);
+    }
+
+    showModal() {
+        this.displayModal = true;
+    }
+
+    hideModal(event: Event) {
+        event.stopPropagation();
+        this.displayModal = false;
+    }
+
+    saveFish() {
+        console.log(this.modalFish);
+    }
+
+    isNumber(val: any) : boolean {
+        return !Number.isNaN(val);
     }
     
 }
