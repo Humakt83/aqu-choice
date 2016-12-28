@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Fish, OptimalWater } from '../index';
+import { StorageService } from '../storage/storage.service';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
@@ -7,8 +8,11 @@ export class FishService {
   
     fish : BehaviorSubject<Fish[]> = new BehaviorSubject<Fish[]>([]);
     
+    constructor(private storageService: StorageService) {
+    }
+
     getFish() : BehaviorSubject<Fish[]> {
-        this.fish.next(this.fishArray);
+        this.fish.next(this.fishArray.concat(this.storageService.getStoredFish()));
         return this.fish;
     }
     

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PlantService, FishService, BasketService, Living, OptimalWater, MolluscaService, Plant, Mollusca, Fish } from '../shared/index';
+import { PlantService, FishService, BasketService, Living, OptimalWater, MolluscaService, Plant, Mollusca, 
+    Fish, StorageService } from '../shared/index';
 import 'rxjs/add/operator/combineLatest';
 
 @Component({
@@ -12,12 +13,13 @@ export class ChooseComponent implements OnInit {
     life : Living[] = [];
     size: number = 1000;
     displayModal = false;
-    modalFish: Fish = new Fish('Scientific Name', '', new OptimalWater(6, 8, 2, 6, 20, 30), 100, 10, '');
+    modalFish: Fish = new Fish('', '', new OptimalWater(6, 8, 2, 6, 20, 30), 100, 10, '');
     
     customWater : OptimalWater = new OptimalWater(7, 7, 7, 7, 25, 25);
     useCustomWater: boolean = false;
     
-    constructor(private plantService: PlantService, private fishService: FishService, private basketService: BasketService, private molluscaService: MolluscaService) {}
+    constructor(private plantService: PlantService, private fishService: FishService, private basketService: BasketService, 
+        private molluscaService: MolluscaService, private storageService: StorageService) {}
     
     ngOnInit() {
         this.plantService.getPlants()
@@ -63,7 +65,14 @@ export class ChooseComponent implements OnInit {
     }
 
     saveFish() {
-        console.log(this.modalFish);
+        this.storageService.addFishToStorage(this.modalFish);
+        this.displayModal = false;
+    }
+
+    canAddFish() {
+        return this.modalFish.scientificName.trim().length > 0
+            && this.isNumber(this.modalFish.minimumTankSize) && this.modalFish.minimumTankSize > 0
+            && this.isNumber(this.modalFish.size) && this.modalFish.size > 0;
     }
 
     isNumber(val: any) : boolean {

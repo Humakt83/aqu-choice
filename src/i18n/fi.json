@@ -15,7 +15,15 @@
         "volume": "Tilavuus l",
         "waterparams": "Halutuilla vesiarvoilla",
         "set": "Aseta",
-        "unset": "Poista"
+        "unset": "Poista",
+        "add": "Lisää kala",
+        "addModal": {
+            "scientificName": "Tieteellinen nimi",
+            "finnishName": "Nimi",
+            "englishName": "Nimi englanniksi",
+            "lengthOfFish": "Kalan pituus",
+            "minimumTankSize": "Minimi tankin koko"
+        }
     },
     "Info": {
         "title": "Info",

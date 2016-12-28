@@ -30,7 +30,7 @@
 <div *ngIf="displayModal" id="infoModal" class="modal" (click)="hideModal($event)">
     <div class="modal-content" (click)="$event.stopPropagation()">
         <span class="close" (click)="hideModal($event)">x</span>
-        <form id="addFishForm" submit="saveFish()" novalidate>
+        <form id="addFishForm" (submit)="saveFish()" novalidate>
             <div class="formSection">
                 <label for="modalScientificName">{{'Choose.addModal.scientificName' | translate}}</label>
                 <input type="text" id="modalScientificName" name="modalScientificName" [(ngModel)]="modalFish.scientificName" required>
@@ -54,7 +54,7 @@
                 <input type="number" min="1" id="modalTankSize" name="modalTankSize" [(ngModel)]="modalFish.minimumTankSize" required>
                 <span *ngIf="!isNumber(modalFish.minimumTankSize) || modalFish.minimumTankSize < 1" class="errorHelp">*</span>
             </div>
-            <button type="submit">{{'Choose.add' | translate}}</button>
+            <button type="submit" [disabled]="!canAddFish()">{{'Choose.add' | translate}}</button>
         </form>
     </div>
 </div>

@@ -15,7 +15,15 @@
         "volume": "Volume l",
         "waterparams": "Water parameters",
         "set": "Set",
-        "unset": "Unset"
+        "unset": "Unset",
+        "add": "Add fish",
+        "addModal": {
+            "scientificName": "Scientific name",
+            "finnishName": "Finnish name",
+            "englishName": "English name",
+            "lengthOfFish": "Lengh of fish",
+            "minimumTankSize": "Minimum required tank size"
+        }
     },
     "Info": {
         "title": "Info",
