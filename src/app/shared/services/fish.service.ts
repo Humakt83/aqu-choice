@@ -9,11 +9,13 @@ export class FishService {
     fish : BehaviorSubject<Fish[]> = new BehaviorSubject<Fish[]>([]);
     
     constructor(private storageService: StorageService) {
+        this.getFish();    
     }
 
-    getFish() : BehaviorSubject<Fish[]> {
-        this.fish.next(this.fishArray.concat(this.storageService.getStoredFish()));
-        return this.fish;
+    private getFish() {
+        this.storageService.storedFish.subscribe(
+            result => this.fish.next(this.fishArray.concat(result))
+        );
     }
     
     private fishArray : Fish[] = [
