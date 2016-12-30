@@ -13,8 +13,10 @@ export class MolluscaService {
     }
     
     private molluscaArray : Mollusca[] = [
-        new Mollusca('Melanoides tuberculata', 'Kierteissarvikotilo', new OptimalWater(6, 8.5, 4, 19.9, 18, 30), 10, null),
-        new Mollusca('Anentome helena', 'Petokotilo', new OptimalWater(6, 8.2, 4, 19.9, 20, 28), 45, 'Assassin snail'),
-        new Mollusca('Caridina multidentata', 'Leväsukarapu', new OptimalWater(6, 8, 2, 20, 15, 28), 20, null)
+        new Mollusca('Melanoides tuberculata', 'Kierteissarvikotilo', new OptimalWater(6, 8.5, 4, 20, 18, 30), 10, 'Malaysian Trumpet Snail'),
+        new Mollusca('Anentome helena', 'Petokotilo', new OptimalWater(6, 8.2, 4, 20, 20, 28), 45, 'Assassin Snail'),
+        new Mollusca('Caridina multidentata', 'Leväsukarapu', new OptimalWater(6, 8, 2, 20, 15, 28), 20, 'Amano Shrimp'),
+        new Mollusca('Neritina turrita', 'Tiikerileväkotilo', new OptimalWater(6.8, 8, 8, 20, 22, 26), 40, null),
+        new Mollusca('Clithon diadema', 'Sarvileväkotilo', new OptimalWater(6, 7.5, 3, 20, 22, 28), 12, null)
     ];
 }
