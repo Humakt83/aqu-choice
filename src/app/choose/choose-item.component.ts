@@ -4,8 +4,8 @@ import { TranslateService } from 'ng2-translate';
 
 @Component({
     selector: 'choose-item',
-    templateUrl:   'app/choose/choose-item.html',
-    styleUrls: ['app/choose/choose-item.css']
+    templateUrl:   'choose-item.html',
+    styleUrls: ['choose-item.css']
 })
 export class ChooseItemComponent{
     

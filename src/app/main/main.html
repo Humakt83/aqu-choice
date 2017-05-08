@@ -1,10 +1,11 @@
 <info></info>
 <div class="flag">
-    <img *ngIf="selectedLanguage === 'fi'" src="fi.gif" (click)="toggleLanguage()">
-    <img *ngIf="selectedLanguage === 'en'" src="en.gif" (click)="toggleLanguage()">
+    <img *ngIf="selectedLanguage === 'fi'" src="../assets/fi.gif" (click)="toggleLanguage()">
+    <img *ngIf="selectedLanguage === 'en'" src="../assets/en.gif" (click)="toggleLanguage()">
 </div>
 <choose></choose>
 <basket></basket>
+<map></map>
 <footer>
     <i>{{'Footer.sourcesheader' | translate}}</i>: {{'Footer.sources' | translate}}
 </footer>

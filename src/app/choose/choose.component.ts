@@ -5,8 +5,8 @@ import 'rxjs/add/operator/combineLatest';
 
 @Component({
     selector: 'choose',
-    templateUrl: 'app/choose/choose.html',
-    styleUrls: ['app/choose/choose.css']
+    templateUrl: 'choose.html',
+    styleUrls: ['choose.css']
 })
 export class ChooseComponent implements OnInit {
     

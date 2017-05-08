@@ -3,7 +3,7 @@ import { TranslateService } from 'ng2-translate';
 
 @Component({
     selector: 'aqu',
-    templateUrl: 'app/main/main.html'
+    templateUrl: 'main.html'
 })
 export class MainComponent {
 

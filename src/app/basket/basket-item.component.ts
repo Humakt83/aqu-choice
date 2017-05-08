@@ -4,8 +4,8 @@ import { TranslateService } from 'ng2-translate';
 
 @Component({
     selector: 'basket-item',
-    templateUrl: 'app/basket/basket-item.html',
-    styleUrls: ['app/basket/basket-item.css']
+    templateUrl: 'basket-item.html',
+    styleUrls: ['basket-item.css']
 })
 export class BasketItemComponent {
     

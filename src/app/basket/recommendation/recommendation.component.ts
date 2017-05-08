@@ -3,8 +3,8 @@ import { RecommendationService } from '../../shared/index';
 
 @Component({
     selector: 'recommendation',
-    templateUrl: 'app/basket/recommendation/recommendation.html',
-    styleUrls: ['app/basket/recommendation/recommendation.css'],
+    templateUrl: 'recommendation.html',
+    styleUrls: ['recommendation.css'],
 })
 export class RecommendationComponent implements OnInit {
     

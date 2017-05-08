@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'info',
-    templateUrl: 'app/info/info.html',
-    styleUrls: ['app/info/info.css']
+    templateUrl: 'info.html',
+    styleUrls: ['info.css']
 })
 export class InfoComponent {
     
