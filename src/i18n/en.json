@@ -16,7 +16,9 @@
         "waterparams": "Water parameters",
         "set": "Set",
         "unset": "Unset",
-        "add": "Add fish",
+        "addFish": "Add fish",
+        "addMollusca": "Add mollusca",
+        "addPlant": "Add plant",
         "addModal": {
             "scientificName": "Scientific name",
             "finnishName": "Finnish name",

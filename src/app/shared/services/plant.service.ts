@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Plant, OptimalWater } from '../index';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { StorageService } from '../storage/storage.service';
 
 @Injectable()
 export class PlantService {
     
     plants : BehaviorSubject<Plant[]> = new BehaviorSubject<Plant[]>([]);
+
+    constructor(private storageService: StorageService) {
+        this.getPlants();
+    }    
     
-    getPlants() : BehaviorSubject<Plant[]> {
-        this.plants.next(this.plantsArray);
-        return this.plants;
+    private getPlants() {
+        this.storageService.storedPlants.subscribe(
+            result => this.plants.next(this.plantsArray.concat(result))
+        );
     }
     
     private plantsArray : Plant[] = [

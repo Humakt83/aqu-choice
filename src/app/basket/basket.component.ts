@@ -19,11 +19,15 @@ export class BasketComponent implements OnInit {
     }
 
     doesBasketContainPlants() : boolean {
-        return this.items.filter(item => item.item instanceof Plant).length > 0;
+        return this.items.filter(item => item.item instanceof Plant).filter(plant => !!plant.item.identificationNumber).length > 0;
     }
 
     aquScapeUrl() {
-        const params = this.items.filter(item => item.item instanceof Plant).map(plant => 'plants=' + (<Plant>plant.item).identificationNumber).reduce((arg1, arg2) => arg1 + "&" + arg2);
+        const params = this.items
+            .filter(item => item.item instanceof Plant)
+            .filter(plant => !!(<Plant>plant.item).identificationNumber)
+            .map(plant => 'plants=' + (<Plant>plant.item).identificationNumber)
+            .reduce((arg1, arg2) => arg1 + "&" + arg2);
         return AQUSCAPE_URL + params;
     }
     

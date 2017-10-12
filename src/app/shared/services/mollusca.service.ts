@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Mollusca, OptimalWater } from '../index';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { StorageService } from '../storage/storage.service';
 
 @Injectable()
 export class MolluscaService {
   
     mollusca : BehaviorSubject<Mollusca[]> = new BehaviorSubject<Mollusca[]>([]);
+
+    constructor(private storageService: StorageService) {
+        this.getMollusca();
+    }
     
-    getMollusca() : BehaviorSubject<Mollusca[]> {
-        this.mollusca.next(this.molluscaArray);
-        return this.mollusca;
+    private getMollusca() {
+        this.storageService.storedMollusca.subscribe(
+            result => this.mollusca.next(this.molluscaArray.concat(result))
+        );
     }
     
     private molluscaArray : Mollusca[] = [

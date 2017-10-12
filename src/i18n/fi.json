@@ -16,7 +16,9 @@
         "waterparams": "Halutuilla vesiarvoilla",
         "set": "Aseta",
         "unset": "Poista",
-        "add": "Lisää kala",
+        "addFish": "Lisää kala",
+        "addMollusca": "Lisää rapu tai kotilo",
+        "addPlant": "Lisää kasvi",
         "addModal": {
             "scientificName": "Tieteellinen nimi",
             "finnishName": "Nimi",
