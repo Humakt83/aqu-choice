@@ -14,10 +14,23 @@ export class MapAreaSelectorComponent implements OnInit {
 
     ngOnInit() {
         this.map = new google.maps.Map(document.getElementById('map'), {zoom: 2, center: {lat: 64, lng: 24}});
+        const worldGeometry = new google.maps.FusionTablesLayer({
+            query: {
+                select: 'geometry',
+                from: '1N2LBk4JHwWpOY4d9fobIn27lfnZ5MDy-NoqqRpk'
+            },
+            map: this.map,
+            suppressInfoWindows: true
+        });
     }
 
     close() {
         this.closeAreaSelection.next(true);
+    }
+
+    clickOnMap(event: MouseEvent) {
+        event.stopPropagation();
+        event.preventDefault();
     }
 
 }
