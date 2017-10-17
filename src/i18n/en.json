@@ -25,7 +25,8 @@
             "englishName": "English name",
             "lengthOfFish": "Lengh of fish",
             "minimumTankSize": "Minimum required tank size"
-        }
+        },
+        "selectArea": "Select area"
     },
     "Info": {
         "title": "Info",

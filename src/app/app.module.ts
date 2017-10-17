@@ -7,11 +7,12 @@ import { InfoComponent } from './info/info.component';
 import { BasketService, ChoiceService, FishService, MolluscaService, PlantService, RecommendationService, StorageService } from './shared/index';
 import { BasketComponent, BasketItemComponent, RecommendationComponent } from './basket/index';
 import { ChooseComponent, ChooseItemComponent, ChooseFilterPipe } from './choose/index';
+import { MapAreaSelectorComponent } from './choose/map/mapareaselector.component';
 import { TranslateModule } from 'ng2-translate';
 
 @NgModule({
     declarations: [MainComponent, InfoComponent, BasketComponent, BasketItemComponent, RecommendationComponent, ChooseComponent, ChooseItemComponent,
-        ChooseFilterPipe],
+        ChooseFilterPipe, MapAreaSelectorComponent],
     imports: [BrowserModule, HttpModule, FormsModule, TranslateModule.forRoot()],
     bootstrap: [MainComponent],
     providers: [HttpModule, BasketService, ChoiceService, FishService, MolluscaService, PlantService, RecommendationService, StorageService]

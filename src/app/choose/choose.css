@@ -26,7 +26,8 @@ input.scientificCheck {
 }
 
 button.addLiving,
-button.toggleUseCustomWater {
+button.toggleUseCustomWater,
+button.selectArea {
     background-color: rgb(255, 227, 194);
     border: 1px solid rgb(255, 227, 194);
     color: rgb(60, 15, 232);
@@ -40,17 +41,20 @@ button.toggleUseCustomWater {
 }
 
 button.addLiving:hover,
-button.toggleUseCustomWater:hover {
+button.toggleUseCustomWater:hover,
+button.selectArea:hover {
     background-color: rgb(60, 15, 232);
     color: rgb(255, 227, 194);    
 }
 
 button.addLiving:active,
-button.toggleUseCustomWater:active {
+button.toggleUseCustomWater:active,
+button.selectArea:active {
   box-shadow: 0 2px #666;
   transform: translateY(2px);
 }
 
+button.selectArea,
 button.addLiving {
     float:right;
     margin-right: 5px;

@@ -26,11 +26,12 @@
             <option>400</option>
             <option>500</option>
             <option>1000</option>
-        </datalist>&nbsp;{{'Choose.volume' | translate}}</label>         
+        </datalist>&nbsp;{{'Choose.volume' | translate}}</label>
+        <button class="selectArea" (click)="showSelectAreaMap = true">{{'Choose.selectArea' | translate}}</button>
     </div>
     <choose-item *ngFor="let living of life | chooseFilter: query : scientific : size : useCustomWater : customWater" [item]="living"></choose-item>
 </div>
-
+<area-selector *ngIf="showSelectAreaMap" (closeAreaSelection)="closeAreaSelection()"></area-selector>
 <div *ngIf="displayModal" id="infoModal" class="modal" (click)="hideModal($event)">
     <div class="modal-content" (click)="$event.stopPropagation()">
         <span class="close" (click)="hideModal($event)">x</span>

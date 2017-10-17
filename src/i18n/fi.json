@@ -25,7 +25,8 @@
             "englishName": "Nimi englanniksi",
             "lengthOfFish": "Kalan pituus",
             "minimumTankSize": "Minimi tankin koko"
-        }
+        },
+        "selectArea": "Valitse alue"
     },
     "Info": {
         "title": "Info",

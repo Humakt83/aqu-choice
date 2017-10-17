@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlantService, FishService, BasketService, Living, OptimalWater, MolluscaService, Plant, Mollusca, 
     Fish, StorageService } from '../shared/index';
-import 'rxjs/add/operator/combineLatest';
+import 'rxjs/Observable';
 
 @Component({
     selector: 'choose',
@@ -21,6 +21,8 @@ export class ChooseComponent implements OnInit {
     modalTypes = ModalType;
 
     chosenModalType: ModalType;
+
+    showSelectAreaMap: boolean = false;
     
     constructor(private plantService: PlantService, private fishService: FishService, private basketService: BasketService, 
         private molluscaService: MolluscaService, private storageService: StorageService) {}
@@ -67,6 +69,10 @@ export class ChooseComponent implements OnInit {
     hideModal(event: Event) {
         event.stopPropagation();
         this.displayModal = false;
+    }
+
+    closeAreaSelection() {
+        this.showSelectAreaMap = false;
     }
 
     saveLiving() {
